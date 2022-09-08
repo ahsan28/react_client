@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authHeader from './auth.header';
 
-const api = "https://rjrydrug.herokuapp.com/"||'http://localhost:5000/'; //'http://localhost:5000/users/'||"https://rjrydrug.herokuapp.com/"
+const api = "https://rjrydrug.herokuapp.com/users/"||'http://localhost:5000/users/'; //'http://localhost:5000/users/'||"https://rjrydrug.herokuapp.com/"
 
 const get = (username) => {
     return axios.get(`${api}${username}`);
