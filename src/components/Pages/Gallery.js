@@ -18,10 +18,12 @@ const Gallery = ({currentUser}) => {
           if (res.data.gallery.length>0){
             res.data.gallery.forEach(async (mediaId,index) => {
               let {data} = await MediaService.read(mediaId);
-              setGalleryImages(()=>[...galleryImages,{
-                image: data.path||data.url,
-                caption: data.name||"Demo caption", 
-              }])
+              if (data){
+                setGalleryImages(()=>[...galleryImages,{
+                  image: data.path||data.url,
+                  caption: data.name||"Demo caption", 
+                }])
+              }
             });
           }
 
